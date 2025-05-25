@@ -33,27 +33,24 @@ const ContactPage = () => {
     }));
   };
   
-  // Validate form before submission
-  const validateForm = () => {
-    const newErrors = {};
-    
-    if (!formData.name.trim()) newErrors.name = "Name is required";
-    
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address";
-    }
-    
-    if (!formData.message.trim()) newErrors.message = "Message is required";
-    
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-  
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Validate form before submission
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.email.trim()) {
+        newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+        newErrors.email = "Please enter a valid email address";
+    }
+    if (!formData.message.trim()) newErrors.message = "Message is required";
+    
+    if (Object.keys(newErrors).length > 0) {
+        return;
+    }
+    
     setIsSubmitting(true);
     try {
         // Simulate API call - replace with actual API endpoint
