@@ -1,4 +1,11 @@
 import './globals.css';
+import { PP_Neue_Montreal } from 'next/font/google';
+
+const ppNeueMontreal = PP_Neue_Montreal({
+    subsets: ['latin'],
+    display: 'optional',
+    weight: ['400', '500', '600', '700'],
+});
 
 export const metadata = {
   title: 'RGB Design',
