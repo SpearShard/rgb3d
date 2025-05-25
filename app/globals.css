@@ -1,26 +1,116 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Zaft font */
+@font-face {
+  font-family: "Zaft";
+  src: url("https://db.onlinewebfonts.com/t/b19baa6e91f07ea222c2c5327382d944.eot");
+  src: url("https://db.onlinewebfonts.com/t/b19baa6e91f07ea222c2c5327382d944.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/b19baa6e91f07ea222c2c5327382d944.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/b19baa6e91f07ea222c2c5327382d944.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/b19baa6e91f07ea222c2c5327382d944.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/b19baa6e91f07ea222c2c5327382d944.svg#Zaft P120Grit")format("svg");
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: 'NM';
+  src: url(/fonts/NeueMetanaNext-SemiBold.otf);
+}
+@font-face {
+  font-family: 'Man';
+  src: url(/public/fonts/manicotti-regular-testing.ttf);
+}
+@font-face {
+  font-family: 'MO';
+  src: url(../public/landing_home/fonts/MooresFreeRegular-51Vya.ttf);
+}
+@font-face {
+  font-family: 'EG';
+  src: url(../public/landing_home/fonts/Elika\ Gorica\ Regular.ttf);
+}
+@font-face {
+  font-family: '501';
+  src: url(../public/fonts/501.ttf);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+/* Text reveal animation styles */
+.font-zaft {
+  font-family: 'Zaft', sans-serif;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.char {
+  transform: translateY(115px);
+  transition: transform 0.5s;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  background-color: #ebebeb;
+  color: #1a1a1a;
+}
+
+.nav-col{
+  flex: 1;
+  display: flex;
+}
+
+.nav-item{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-col:nth-child(2) .nav-item:last-child p {
+  text-align: right;
+}
+.header h1 span{
+  position: relative;
+  display: inline-block;
+  transform: translateY(500px);
+}
+
+@media (max-width: 900px) {
+  .nav-col:nth-child(1) .nav-items:nth-child(2) p{
+    text-align: center;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .nav-col:nth-child(2){
+    display: none;
+  }
+  .header{
+    top:30%;
+  }
+  .hero-img{
+    height: 50vh;
+  }
 }
