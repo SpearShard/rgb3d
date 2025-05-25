@@ -1,5 +1,5 @@
 import './globals.css';
-import { PP_Neue_Montreal } from 'next/font/google';
+
 
 // const ppNeueMontreal = PP_Neue_Montreal({
 //     subsets: ['latin'],
