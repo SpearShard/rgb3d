@@ -54,33 +54,30 @@ const ContactPage = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if (!validateForm()) return;
     setIsSubmitting(true);
-    
     try {
-      // Simulate API call - replace with actual API endpoint
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Success animation
-      gsap.to(formRef.current, {
-        y: -20,
-        opacity: 0,
-        duration: 0.5,
-        onComplete: () => {
-          setFormSubmitted(true);
-          gsap.fromTo(
-            ".success-message",
-            { y: 20, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.5 }
-          );
-        }
-      });
-    } catch (error) {
-      // Show error message
-      setErrors({ form: "Something went wrong. Please try again." });
+        // Simulate API call - replace with actual API endpoint
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        // Success animation
+        gsap.to(formRef.current, {
+            y: -20,
+            opacity: 0,
+            duration: 0.5,
+            onComplete: () => {
+                setFormSubmitted(true);
+                gsap.fromTo(
+                    ".success-message",
+                    { y: 20, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.5 }
+                );
+            }
+        });
+    } catch (err) {
+        console.error('Error sending message:', err);
+        setFormSubmitted(false);
     } finally {
-      setIsSubmitting(false);
+        setIsSubmitting(false);
     }
   };
   
@@ -181,7 +178,7 @@ const ContactPage = () => {
             ref={headingRef}
             className="text-5xl md:text-6xl lg:text-7xl font-zaft text-gray-900 mb-16 form-element text-center tracking-tight"
           >
-            Let's Start a <span className="text-blue-600">Conversation</span>
+            Let&apos;s Start a <span className="text-blue-600">Conversation</span>
           </h1>
           
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
@@ -294,7 +291,7 @@ const ContactPage = () => {
                   </div>
                   <h3 className="text-2xl font-semibold text-gray-900 mb-4">Message Sent!</h3>
                   <p className="text-gray-600">
-                    Thank you for reaching out. We'll get back to you soon.
+                    Thank you for reaching out. We&apos;ll get back to you soon.
                   </p>
                 </div>
               )}

@@ -1,8 +1,8 @@
 'use client';
 
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { Canvas, useFrame} from '@react-three/fiber';
 import { useRef, useState, useEffect } from 'react';
-import { Sphere, Box, MeshDistortMaterial, Text, Float, PerspectiveCamera } from '@react-three/drei';
+import { Sphere,  MeshDistortMaterial, Text, Float} from '@react-three/drei';
 import * as THREE from 'three';
 
 function lerp(start, end, t) {

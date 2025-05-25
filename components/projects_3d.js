@@ -92,8 +92,8 @@ export default function Gallery() {
         
         for (let i = 0; i < config.imageCount; i++) {
             const angle = (i / config.imageCount) * Math.PI * 2;
-            const x = config.radius * Math.cos(angle);
-            const y = config.radius * Math.sin(angle);
+            // const x = config.radius * Math.cos(angle);
+            // const y = config.radius * Math.sin(angle);
             const cardIndex = i % collection.length;
 
             const card = document.createElement("div");

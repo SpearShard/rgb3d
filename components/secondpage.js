@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 
 const Second = () => {
     const sectionRef = useRef(null);
-    const textRef = useRef(null);
+    // const textRef = useRef(null);
     const [activeColor, setActiveColor] = useState('red');
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
@@ -183,7 +183,7 @@ const Second = () => {
                                 RG<span className="text-blue-500">B</span> Innovate
                             </h2>
                             <p className="text-2xl text-white/80 max-w-2xl mb-16 leading-relaxed">
-                                Dive into the blue of innovation. Representing trust, depth, and stability while pushing the boundaries of what's possible.
+                                Dive into the blue of innovation. Representing trust, depth, and stability while pushing the boundaries of what&apos;s possible.
                             </p>
                             <div className="flex flex-col space-y-8 mt-8">
                                 <div className="h-32 bg-blue-500/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-blue-500/30 hover:bg-blue-500/30 transition-all duration-300 cursor-pointer p-6">
